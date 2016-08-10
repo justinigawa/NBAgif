@@ -1,0 +1,32 @@
+button, div, form, input {
+			margin: 10px;
+		}
+
+.player{
+	margin: 10px;
+	font-weight: bolder;
+}
+
+#addplayer{
+	margin-top: 10px;
+}
+
+.jumbotron{
+	text-align: center;
+	font-weight: bolder;
+	background-color: transparent!important;	
+}
+
+h1{
+	color: white !important;
+	text-align: center;
+	font-weight: bolder;
+}
+
+body{
+	background: url(../images/nbabackground.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+}
