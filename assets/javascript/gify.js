@@ -6,14 +6,14 @@ $(document).ready(function() {
 
     // ========================================================
 
-    // displayplayerInfo function now re-renders the HTML to display the appropriate content. 
+    // displayplayerInfo function now re-renders the HTML to display the appropriate content.
     function displayplayerInfo(){
-        
-        
+
+
         var player = $(this).attr('data-name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + player + "&api_key=dc6zaTOxFJmzC&limit=10";
-        
-        // Creates AJAX call for the specific player being 
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + player + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+        // Creates AJAX call for the specific player being
          $.ajax({
                 url: queryURL,
                 method: 'GET'
@@ -36,14 +36,14 @@ $(document).ready(function() {
                     personImage.attr('data-state','still');
                     personImage.attr('class','personImage');
 
-                    
+
 
                     gifDiv.append(p)
                     gifDiv.append(personImage)
 
                     $('#gifsAppearHere').prepend(gifDiv);
                 }
-           
+
                 $('.personImage').on('click', function(){
                     var state = $(this).attr('data-state');
                     if (state == 'still') {//if the gif is still, then animate it onclick
@@ -54,17 +54,17 @@ $(document).ready(function() {
                         $(this).attr('src', $(this).data('still'));
                         $(this).attr('data-state', 'still');
                     }
-                   
+
             });
-         });   
-    }   
+         });
+    }
 
 
 
     // ========================================================
 
-    // Generic function for displaying player data 
-    function renderButtons(){ 
+    // Generic function for displaying player data
+    function renderButtons(){
 
         // Deletes the players prior to adding new players (this is necessary otherwise you will have repeat buttons)
         $('#buttonsView').empty();
@@ -74,9 +74,9 @@ $(document).ready(function() {
 
             // Then dynamicaly generates buttons for each player in the array
 
-            // Note the jQUery syntax here... 
+            // Note the jQUery syntax here...
             var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
-            a.addClass('player'); // Added a class 
+            a.addClass('player'); // Added a class
             a.attr('data-name', players[i]); // Added a data-attribute
             a.text(players[i]); // Provided the initial button text
             $('#buttonsView').append(a); // Added the button to the HTML
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
         // The player from the textbox is then added to our array
         players.push(player);
-        
+
         // Our array then runs which handles the processing of our player array
         renderButtons();
 
@@ -101,7 +101,7 @@ $(document).ready(function() {
         return false;
     });
 
- 
+
 
     // ========================================================
 
